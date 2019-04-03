@@ -1,35 +1,33 @@
 <template>
   <div @click="clickHandle">
+    <i-grid i-class="no-border">
+    <i-grid-item i-class="no-border">
+    <i-grid-icon>
+    <image src="/static/grid/nail polish.png" />
+    </i-grid-icon>
+    <i-grid-label>美甲</i-grid-label>
+    </i-grid-item>
+    <i-grid-item i-class="no-border">
+    <i-grid-icon>
+    <image src="/static/grid/make up.png" />
+    </i-grid-icon>
+    <i-grid-label>美妆</i-grid-label>
+    </i-grid-item>
+    <i-grid-item i-class="no-border">
+    <i-grid-icon>
+    <image src="/static/skin/1.png" />
+    </i-grid-icon>
+    <i-grid-label>搭配</i-grid-label>
+    </i-grid-item>
+    <i-grid-item i-class="no-border">
+    <i-grid-icon>
+    <image src="/static/grid/Hairdresser.png" />
+    </i-grid-icon>
+    <i-grid-label>洗发</i-grid-label>
+    </i-grid-item>
+    </i-grid>
 
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
-
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" :value="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-
-    <div class="all">
-        <div class="left">
-        </div>
-        <div class="right">
-        </div>
-    </div>
+    
   </div>
 </template>
 
