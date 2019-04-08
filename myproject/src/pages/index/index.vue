@@ -1,27 +1,30 @@
 <template>
   <div @click="clickHandle">
+    <i-notice-bar icon="systemprompt" loop>
+    {{notice}}巴拉巴拉
+    </i-notice-bar>
     <i-grid i-class="no-border">
     <i-grid-item i-class="no-border">
     <i-grid-icon>
-    <image src="/static/grid/nail polish.png" />
+    <image src="/static/images/nail polish.png" />
     </i-grid-icon>
     <i-grid-label>美甲</i-grid-label>
     </i-grid-item>
     <i-grid-item i-class="no-border">
     <i-grid-icon>
-    <image src="/static/grid/make up.png" />
+    <image src="/static/images/make up.png" />
     </i-grid-icon>
     <i-grid-label>美妆</i-grid-label>
     </i-grid-item>
     <i-grid-item i-class="no-border">
     <i-grid-icon>
-    <image src="/static/skin/1.png" />
+    <image src="/static/images/skin.png" />
     </i-grid-icon>
     <i-grid-label>搭配</i-grid-label>
     </i-grid-item>
     <i-grid-item i-class="no-border">
     <i-grid-icon>
-    <image src="/static/grid/Hairdresser.png" />
+    <image src="/static/images/Hairdresser.png" />
     </i-grid-icon>
     <i-grid-label>洗发</i-grid-label>
     </i-grid-item>
