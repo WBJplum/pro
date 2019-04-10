@@ -29,6 +29,24 @@
     <i-grid-label>洗发</i-grid-label>
     </i-grid-item>
     </i-grid>
+     <Row style="background:#eee;padding:20px">
+        <i-col span="11">
+            <Card :bordered="false">
+                <p slot="title">无边框卡片</p>
+                <p>卡片内容</p>
+                <p>卡片内容</p>
+                <p>卡片内容</p>
+            </Card>
+        </i-col>
+        <i-col span="11" offset="2">
+            <Card shadow>
+                <p slot="title">使用阴影效果的卡片</p>
+                <p>卡片内容</p>
+                <p>卡片内容</p>
+                <p>卡片内容</p>
+            </Card>
+        </i-col>
+    </Row>
 
 
 
@@ -70,7 +88,17 @@ export default {
   },
 
   created () {
-    // let app = getApp()
+    const db = wx.cloud.database({ env: ''})
+    db.collection('shop').get().then(
+      res => {
+        this.shops = res.data
+      }
+    )
+    wx.cloud.callFuction({ name: 'W1324-66'}).then(
+      res =>{
+        console.log(res)
+      }
+    )
   }
 }
 </script>
