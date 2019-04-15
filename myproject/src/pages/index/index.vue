@@ -29,26 +29,18 @@
     <i-grid-label>洗发</i-grid-label>
     </i-grid-item>
     </i-grid>
-     <Row style="background:#eee;padding:20px">
-        <i-col span="11">
-            <Card :bordered="false">
-                <p slot="title">无边框卡片</p>
-                <p>卡片内容</p>
-                <p>卡片内容</p>
-                <p>卡片内容</p>
-            </Card>
-        </i-col>
-        <i-col span="11" offset="2">
-            <Card shadow>
-                <p slot="title">使用阴影效果的卡片</p>
-                <p>卡片内容</p>
-                <p>卡片内容</p>
-                <p>卡片内容</p>
-            </Card>
-        </i-col>
-    </Row>
+    
 
-
+    <Card>
+        <p slot="title">
+            经典电影
+        </p>
+        <a href="#" slot="extra" @click.prevent="changeLimit">
+            <Icon type="ios-loop-strong"></Icon>
+            换一换
+        </a>
+        
+    </Card>
 
     
   </div>
@@ -63,7 +55,21 @@ export default {
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
+        avatarUrl: 'http://mpvue.com/assets/logo.png',
+        limitNum: 2,
+        limitFrom: 0,
+        movieList: [
+                    {
+                        name: '肖申克的救赎',
+                        url: 'https://movie.douban.com/subject/1292052/',
+                        rate: 9.6
+                    },
+                    {
+                        name: '这个杀手不太冷',
+                        url: 'https://movie.douban.com/subject/1295644/',
+                        rate: 9.4
+                    }
+                                   ]
       }
     }
   },
