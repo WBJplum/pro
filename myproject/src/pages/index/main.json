@@ -1,5 +1,6 @@
 {
 	"usingComponents": {
+		"i-button": "../../../static/dist/button/index",
 		"i-notice-bar": "../../../static/dist/notice-bar/index",
 		"i-grid": "../../../static/dist/grid/index",
 		"i-grid-item": "../../../static/dist/grid-item/index",
