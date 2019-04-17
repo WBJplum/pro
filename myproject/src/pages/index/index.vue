@@ -44,6 +44,7 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      beauty:[],
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
@@ -77,11 +78,6 @@ export default {
       res => {
         console.log(res.data)
         this.beauty = res.data
-      }
-    )
-    wx.cloud.callFuction({ name: 'W1324-66'}).then(
-      res =>{
-        console.log(res)
       }
     )
   }
