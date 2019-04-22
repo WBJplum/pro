@@ -1,10 +1,10 @@
 <template>
   <div @click="clickHandle">
-    <i-notice-bar icon="systemprompt" loop>
-    {{notice}}巴拉巴拉
+    <i-notice-bar icon="systemprompt" loop :speed='1500' :color="'pink'">
+    {{notice}}店铺推荐
     </i-notice-bar>
     <i-grid i-class="no-border">
-    <i-grid-item i-class="no-border">
+    <i-grid-item >
     <i-grid-icon>
     <image src="/static/images/nail polish.png" />
     </i-grid-icon>
@@ -16,6 +16,8 @@
     </i-grid-icon>
     <i-grid-label>美妆</i-grid-label>
     </i-grid-item>
+      </i-grid>
+    <i-grid i-class="no-border">
     <i-grid-item i-class="no-border">
     <i-grid-icon>
     <image src="/static/images/skin.png" />
@@ -27,6 +29,13 @@
     <image src="/static/images/Hairdresser.png" />
     </i-grid-icon>
     <i-grid-label>洗发</i-grid-label>
+    </i-grid-item>
+    </i-grid>
+    <i-grid i-class="no-border">
+      <i-grid-item i-class="no-border">
+    <i-grid-icon>
+    </i-grid-icon>
+    <i-grid-label></i-grid-label>
     </i-grid-item>
     </i-grid>
     <view v-for="item in beauty" :key='item' class="top-padding">
