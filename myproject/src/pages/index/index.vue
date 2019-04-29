@@ -18,13 +18,13 @@
     </i-grid-item>
       </i-grid>
     <i-grid i-class="no-border">
-    <i-grid-item i-class="no-border">
+    <i-grid-item >
     <i-grid-icon>
     <image src="/static/images/skin.png" />
     </i-grid-icon>
     <i-grid-label>搭配</i-grid-label>
     </i-grid-item>
-    <i-grid-item i-class="no-border">
+    <i-grid-item >
     <i-grid-icon>
     <image src="/static/images/Hairdresser.png" />
     </i-grid-icon>
@@ -38,6 +38,7 @@
     <i-grid-label></i-grid-label>
     </i-grid-item>
     </i-grid>
+    <p>/推荐：/</p>
     <view v-for="item in beauty" :key='item' class="top-padding">
      <i-card :title="item.name" :extra="item.id" :thumb="item.photo">
        <view slot="content">{{item.place}}</view>
@@ -66,20 +67,17 @@ export default {
     card
   },
 
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
+
+  methods: {      
+    goList (url) {
+      mpvue.navigateTo({ url })
     },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
+    goType (type) {
+      let url = '../list/main?type=' + type
+      mpvue.navigateTo({ url })
     }
   },
+
 
   created () {
     const db = wx.cloud.database({ env: 'store-2cfefc'})
