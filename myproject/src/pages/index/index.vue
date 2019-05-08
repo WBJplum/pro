@@ -38,7 +38,7 @@
     <i-grid-label></i-grid-label>
     </i-grid-item>
     </i-grid>
-    <p>/推荐：/</p>
+    <p>热推</p>
     <view v-for="item in beauty" :key='item' class="top-padding">
      <i-card :title="item.name" :extra="item.id" :thumb="item.photo">
        <view slot="content">{{item.place}}</view>
