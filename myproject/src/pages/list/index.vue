@@ -1,10 +1,21 @@
 <template>
-  <div>
+<div @click="clickHandle">
+    <i-notice-bar icon="systemprompt" loop :speed='1500' :color="'black'">
+    {{notice}}各种美妆品牌详解！！
+    </i-notice-bar>
+        <i-grid i-class="no-border">
+    <i-grid-item >
+    <i-grid-icon>
+    <image src="/static/images/lipstick.png" />
+    </i-grid-icon>
+    <i-grid-label>Lipstick</i-grid-label>
+    </i-grid-item>
+<div>
     <i-panel title="分类推荐">
-      <view v-for="item in beauty" :key='item' class="top-padding">
-     <i-card :title="item.name" :extra="item.id" :thumb="item.photo">
-       <view slot="content">{{item.place}}</view>
+      <view v-for="item in lipstick" :key='item' class="top-padding">
+     <i-card :title="item.name" :extra="item.png" :thumb="item.photo">
        <view slot="content">{{item.intro}}</view>
+       <view slot="content">{{item.type}}</view>
        </i-card>
     </view>
     </i-panel>
