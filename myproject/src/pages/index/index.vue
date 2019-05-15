@@ -41,8 +41,8 @@
     <p>热推</p>
     <view v-for="item in beauty" :key='item' class="top-padding">
      <i-card :title="item.name" :extra="item.id" :thumb="item.photo">
-       <view slot="content">{{item.place}}</view>
-       <view slot="content">{{item.intro}}</view>
+       <view slot="content">位置：{{item.place}}</view>
+       <view slot="content">店铺介绍：{{item.intro}}</view>
        </i-card>
     </view>
     </div>

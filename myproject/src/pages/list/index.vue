@@ -1,15 +1,4 @@
 <template>
-<div @click="clickHandle">
-    <i-notice-bar icon="systemprompt" loop :speed='1500' :color="'black'">
-    {{notice}}各种美妆品牌详解！！
-    </i-notice-bar>
-        <i-grid i-class="no-border">
-    <i-grid-item >
-    <i-grid-icon>
-    <image src="/static/images/lipstick.png" />
-    </i-grid-icon>
-    <i-grid-label>Lipstick</i-grid-label>
-    </i-grid-item>
 <div>
     <i-panel title="分类推荐">
       <view v-for="item in lipstick" :key='item' class="top-padding">
@@ -19,7 +8,7 @@
        </i-card>
     </view>
     </i-panel>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -29,7 +18,7 @@ export default {
 
   data () {
     return {
-      recommand: []
+      lipstick: []
     }
   },
 
@@ -38,7 +27,14 @@ export default {
     //this.recommand = require('/data/' + option.type + '.json')
   },
 
-  created () {
+   created () {
+    const db = wx.cloud.database({ env: 'store-2cfefc'})
+    db.collection('lipstick').get().then(
+      res => {
+        console.log(res.data)
+        this.lipstick = res.data
+      }
+    )
   }
 }
 </script>
