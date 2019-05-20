@@ -1,10 +1,15 @@
 <template>
 <div>
-    <i-panel title="分类推荐">
+    <p> </p>
+    <i-grid i-class="no-border">
+    <i-grid-item >
+    <i-grid-label>口红专栏</i-grid-label>
+    </i-grid-item>
+    </i-grid>
       <view v-for="item in lipstick" :key='item' class="top-padding">
-     <i-card :title="item.name" :extra="item.png" :thumb="item.photo">
-       <view slot="content">{{item.intro}}</view>
-       <view slot="content">{{item.type}}</view>
+     <i-card :title="item.name" :thumb="item.photo">
+       <view slot="content">介绍：{{item.intro}}</view>
+       <view slot="content">色号推荐：{{item.type}}</view>
        </i-card>
     </view>
     </i-panel>
