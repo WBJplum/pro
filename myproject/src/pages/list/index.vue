@@ -12,7 +12,18 @@
        <view slot="content">色号推荐：{{item.type}}</view>
        </i-card>
     </view>
-    </i-panel>
+      <p> </p>
+    <i-grid i-class="no-border">
+    <i-grid-item >
+    <i-grid-label>眼影专栏</i-grid-label>
+    </i-grid-item>
+    </i-grid>
+      <view v-for="item in eyeshadow" :key='item' class="top-padding">
+     <i-card :title="item.name" :extra="item.from" :thumb="item.photo">
+       <view slot="content">介绍：{{item.intro}}</view>
+       <view slot="content">价位：{{item.price}}</view>
+       </i-card>
+    </view>
     </div>
 </template>
 
@@ -23,7 +34,8 @@ export default {
 
   data () {
     return {
-      lipstick: []
+      lipstick: [],
+      eyeshadow: []
     }
   },
 
