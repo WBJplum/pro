@@ -21,7 +21,19 @@
       <view v-for="item in eyeshadow" :key='item' class="top-padding">
      <i-card :title="item.name" :extra="item.from" :thumb="item.photo">
        <view slot="content">介绍：{{item.intro}}</view>
-       <view slot="content">价位：{{item.price}}</view>
+       <view slot="content">类型推荐：{{item.type}}</view>
+       </i-card>
+    </view>
+      <p> </p>
+    <i-grid i-class="no-border">
+    <i-grid-item >
+    <i-grid-label>香水专栏</i-grid-label>
+    </i-grid-item>
+    </i-grid>
+      <view v-for="item in perfume" :key='item' class="top-padding">
+     <i-card :title="item.name" :extra="item.from" :thumb="item.photo">
+       <view slot="content">创造人：{{item.inventor}}</view>
+       <view slot="content">类型推荐：{{item.type}}</view>
        </i-card>
     </view>
     </div>
@@ -35,7 +47,8 @@ export default {
   data () {
     return {
       lipstick: [],
-      eyeshadow: []
+      eyeshadow: [],
+      perfume: []
     }
   },
 
@@ -50,6 +63,18 @@ export default {
       res => {
         console.log(res.data)
         this.lipstick = res.data
+      }
+    )
+        db.collection('eyeshadow').get().then(
+      res => {
+        console.log(res.data)
+        this.eyeshadow = res.data
+      }
+    )
+      db.collection('perfume').get().then(
+      res => {
+        console.log(res.data)
+        this.perfume = res.data
       }
     )
   }
