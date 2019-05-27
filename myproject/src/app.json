@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/main",
     "pages/list/main",
-    "pages/mine/main"
+    "pages/mine/main",
+    "pages/logs/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
