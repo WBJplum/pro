@@ -1,9 +1,10 @@
 <template>
 <div>
-  <view v-for="item in beauty" :key='item' class="top-padding">
-     <i-card :title="item.name" :extra="item.id" :thumb="item.photo">
-       <view slot="content">位置：{{item.place}}</view>
-       <view slot="content">店铺介绍：{{item.intro}}</view>
+  <view v-for="item in jump" :key='item' class="top-padding">
+     <i-card :title="item.name" :thumb="item.photo">
+       <view slot="content">实体店位置：{{item.adress}}</view>
+       <view slot="content">色号：{{item.type}}</view>
+       <view slot="content">连接：{{item.http}}</view>
        </i-card>
   </view>
 </div>
@@ -14,7 +15,7 @@
 export default {
   data () {
     return {
-    beauty:[],
+    jump:[],
      list:[]
     }
   },
@@ -41,10 +42,10 @@ export default {
 
   created () {
     const db = wx.cloud.database({ env: 'store-2cfefc'})
-    db.collection('beauty').get().then(
+    db.collection('jump').get().then(
       res => {
         console.log(res.data)
-        this.beauty = res.data
+        this.jump = res.data
       }
     )
   }
