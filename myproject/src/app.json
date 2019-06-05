@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/list/main",
     "pages/mine/main",
-    "pages/logs/main"
+    "pages/logs/main",
+    "pages/meizhuang/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

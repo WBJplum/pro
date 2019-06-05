@@ -76,7 +76,7 @@ export default {
       wx.navigateTo({ url })
     },
     meizhuang (b) {
-      const url ='../logs/main?b='+b;
+      const url ='../meizhuang/main?b='+b;
       wx.navigateTo({ url })
     },
     dapei (c) {
