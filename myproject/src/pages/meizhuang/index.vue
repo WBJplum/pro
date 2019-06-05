@@ -21,7 +21,7 @@ export default {
    methods: { 
      requestData(b){
        var that=this;
-       var apl='http://www.phonegap100.com/appai.php?a=getPortalArticle&a'+a;
+       var apl='http://www.phonegap100.com/appai.php?b=getPortalArticle&a'+b;
     wx.request({
       url:b,
       header: {

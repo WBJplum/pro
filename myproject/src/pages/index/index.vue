@@ -76,6 +76,7 @@ export default {
       wx.navigateTo({ url })
     },
     meizhuang (b) {
+      console.log(b);
       const url ='../meizhuang/main?b='+b;
       wx.navigateTo({ url })
     },
